@@ -1,31 +1,18 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
+import * as CryptoJS from "crypto-js";
 
 @Component({
   selector: "app-flags",
   templateUrl: "./flags.component.html",
   styleUrls: ["./flags.component.scss"],
 })
-export class FlagsComponent implements OnInit {
+export class FlagsComponent {
   protected studentId: string;
-  //protected pageName: string;
+  protected pageName: string;
   protected flag: string;
-  @Input() pageName: string;
 
-  constructor() {
-    this.SetStudentId("M-1234");
-    debugger;
-  }
+  constructor() {}
 
-  ngOnInit() {
-    // Called after the constructor and called  after the first ngOnChanges()
-    debugger;
-  }
-
-  public SetStudentId(studentId: string) {
-    debugger;
-    sessionStorage.setItem("StudentID", studentId);
-    this.studentId = studentId;
-  }
   public SetPageName(pageName: string) {
     debugger;
     this.pageName = pageName;
@@ -39,6 +26,6 @@ export class FlagsComponent implements OnInit {
 
   public GenerateFlag(pageName: string) {
     debugger;
-    this.flag = this.pageName + "Encypted Token after algo";
+    this.flag = CryptoJS.MD5(this.GetStudentId() + this.pageName);
   }
 }

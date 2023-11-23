@@ -2,9 +2,16 @@
   ~ Copyright (c) 2014-2023 Bjoern Kimminich & the OWASP Juice Shop contributors.
   ~ SPDX-License-Identifier: MIT
   -->
-<app-flags #flagsComponent></app-flags>
 <div fxLayout="column">
   <div fxLayout="row" fxLayout.lt-md="column">
+    <mat-card fxFlex="grow">
+      <mat-card-title>
+        Flag:
+        <small class="confirmation"
+          ><app-flags #flagsComponent></app-flags
+        ></small>
+      </mat-card-title>
+    </mat-card>
     <mat-card fxFlex="grow">
       <mat-card-title
         >{{ "TITLE_SCORE_BOARD" | translate }}

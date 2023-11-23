@@ -1,0 +1,32 @@
+<div fxLayoutAlign="center">
+  <mat-card class="mat-elevation-z6">
+    <h1>Configure Student</h1>
+
+    <div class="form-container" id="login-form">
+      <mat-form-field color="accent" appearance="outline">
+        <mat-label translate>Student ID</mat-label>
+        <input
+          id="student"
+          matInput
+          placeholder=""
+          aria-label="Text field for the student id"
+          [(ngModel)]="studentId"
+        />
+      </mat-form-field>
+      <div class="breakLine">
+        <div class="line"></div>
+      </div>
+      <button
+        type="submit"
+        id="loginButton"
+        mat-raised-button
+        color="primary"
+        (click)="Login()"
+        aria-label="Login"
+      >
+        <mat-icon> exit_to_app </mat-icon>
+        {{ loginButtonText }}
+      </button>
+    </div>
+  </mat-card>
+</div>

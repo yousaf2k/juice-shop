@@ -53,7 +53,7 @@
               "ethers/lib/utils",
               "js-sha3"
             ],
-            "scripts": [],
+            "scripts": ["src/assets/md5.js"],
             "aot": false,
             "vendorChunk": true,
             "extractLicenses": false,
